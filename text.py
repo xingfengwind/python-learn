@@ -1,13 +1,19 @@
- # 定义函数func_b
-def func_b():
-    print("---2---")
-# 定义函数func_a,并在内部调用func_b
-def func_a():
-    print("---1---")
-    func_b()
+# 演示局部变量
+#def test_a():
+#    num = 100
+#   print(num)
 
-    print("---3---")
+#test_a()
+#出了函数体，局部变量就无法使用了
+#print(num)# 无法输出
 
-#调用函数func_a
-func_a()
+#演示全局变量
+num=200
+def test_a():
+    print(f"test_a:{num}")
+def test_b():
+    print(f"test_b:{num}")
+test_a()
+test_b()
+print(num)
 
