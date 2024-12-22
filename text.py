@@ -1,19 +1,24 @@
-# 演示局部变量
-#def test_a():
-#    num = 100
-#   print(num)
+# 在函数内修改全局变量
+# num=200
+# def test_a():
+#     print(f"test_a:{num}")
+# def test_b():
+#     num=500# 局部变量
+#     print(f"test_b:{num}")
+#
+# test_a()
+# test_b()
+# print(num)
 
-#test_a()
-#出了函数体，局部变量就无法使用了
-#print(num)# 无法输出
-
-#演示全局变量
+# global关键字，在函数内声明为全局变量
 num=200
 def test_a():
     print(f"test_a:{num}")
 def test_b():
+    global num
+    num=500# 局部变量
     print(f"test_b:{num}")
+
 test_a()
 test_b()
 print(num)
-
