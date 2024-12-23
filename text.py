@@ -1,60 +1,31 @@
-#定义全局变量money，name
-money=5000000
-name=None
-#要求客户输入姓名
-name=input("请输入您的姓名：")
-#定义查询函数
-def query(show_header):
-    if show_header:
-        print("------查询余额--------")
-    print(f"{name},您好，您的余额剩余：{money}元")
+ # 定义一个链表List
+my_list=["fr","wl","wx"]
+print(my_list)
+print(type(my_list))
 
-# 定义存款函数
-def saving(num):
-    global money
-    money+=num
-    print("-------存款-------")
-    print(f"{name},您好，您的存款{num}元成功")
-    # 调用query函数查看余额
-    query(False)
+my_list=["ndh",666,True]
+print(my_list)
+print(type(my_list))
 
-# 定义取款函数
-def get_money(num):
-    global money
-    money-=num
-    print("-------存款-------")
-    print(f"{name},您好，您取款{num}元成功")
-    # 调用query函数查看余额
-    query(False)
+# 定义一个嵌套列表
+my_list=[[1,2,3],[4,5,6]]
+print(my_list)
+print(type(my_list))
+# 通过下标索引取出对应位置的数据
+my_list=["Tom","Lily","Rose"]
+# 列表[下标索引]，从前向后从0开始，每次+1，从后向前从-1开始，每次-1
+print(my_list[0])
+print(my_list[1])
+print(my_list[2])
 
-# 定义主菜单函数
-def main():
-    print("-------主菜单-------")
-    print(f"{name},您好，请选择操作：")
-    print("查询余额\t[输入1]")
-    print("存款\t\t[输入2]")  # 通过\t制表符对其输出
-    print("取款\t\t[输入3]")
-    print("退出\t\t[输入4]")
-    return input("请输入您的选择：")
+# 列表[下标索引]，通过下标索引取数据，一定不要超出范围
+#print(my_list[3])
+# 通过下标索引取出数据(倒序取出)
+print(my_list[-1])
+print(my_list[-2])
+print(my_list[-3])
 
-
-
-# 设置无限循环，确保程序不退出
-while True:
-    keyboard_input=main()
-    if keyboard_input == "1":
-        query(True)
-        continue    # 通过continue继续下一次循环，一进来就是回到了主菜单
-    elif keyboard_input == "2":
-        num=int(input("您想要存入多少钱？请输入： "))
-        saving(num)
-        continue
-    elif keyboard_input == "3":
-        num=input("您想取出多少钱？请输入： ")
-        get_money(num)
-        continue
-    else:
-        print("程序退出了")
-        break      # 通过break退出循环
-
+# 取出嵌套列表的元素
+my_list=[[1,2,3],[4,5,6]]
+print(my_list[1][1])
 
