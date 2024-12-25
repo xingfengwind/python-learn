@@ -1,44 +1,33 @@
-# 定义元组
-t1=(1,"Hello",True)
-t2=()
-t3=tuple()
-print(f"t1的类型是:{type(t1)},内容是:{t1}")
-print(f"t2的类型是:{type(t2)},内容是:{t2}")
-print(f"t3的类型是:{type(t3)},内容是:{t3}")
-# 定义单个元素的元素
-t4=("hello", )
-print(f"t4的类型是:{type(t4)},内容是:{t4}")
-# 元组的嵌套
-t5=((1,2,3),(4,5,6))
-print(f"t4的类型是:{type(t5)},内容是:{t5}")
-# 下标索引去取出内容
-num=t5[1][2]
-print(f"从嵌套元组中取出的数据是：{num}")
-# 元组的操作：index查找方法
-t6=(1,2,3,4,5,6)
-index=t6.index(1)
-print(f"在元组6中查找1，的下标：{index}")
-# 元组的操作：count统计方法
-t7=(1,2,1,4,1,1)
-num=t7.count(1)
-print(f"在元组t7中统计1的数量有：{num}个")
-# 元组的操作：len函数统计元组元素的数量
-t8=(1,2,3,4,5,6)
-num=len(t8)
-print(f"t8元组中的元素有：{num}个")
-# 元组的遍历：while
-index=0
-while index<len(t8):
-    print(f"元组的元素有：{t8[index]}")
-    index+=1
-# 元组的遍历：for
-for element in t8:
-    print(f"2元组的元素有:{element}")
-# 修改元组内容
-# 元组的内容不可修改，但嵌套的列表可以修改
+my_str="hhvghghejhgjgjh"
+# 通过下标索引取值
+value=my_str[2]
+value2=my_str[-6]
+print(f"从字符串{my_str}取下标为2的元素，值是：{value},去下标为-16的元素，值是：{value2}")
+# index方法：
+value =my_str.index("e")
+print(f"在字符串{my_str}中查找额，其起始下标是:{value}")
+# replace方法
+new_my_str=my_str.replace("e","2")
+print(f"将字符串{my_str}进行split切分后得到:{new_my_str}")
 
-t9=(1,2,[3,4])
-print(f"t9的内容是:{t9}")
-t9[2][0]=5
-t9[2][1]=6
-print(f"t9的内容是:{t9}")
+# split方法
+my_str="ddg"
+my_str_list=my_str.split(" ")
+print(f"将字符串{my_str}进行split切分后得到:{my_str_list},类型是:{type(my_str_list)}")
+
+# strip方法
+my_str=" ddd "
+new_my_str=my_str.strip()# 不传入参数，去除首尾空格
+print(f"字符串{my_str}被strip后，结果：:{new_my_str}")
+
+my_str="12ddd21"
+new_my_st=my_str.strip("12")
+print(f"字符串{my_str}被strip('12')后，结果：:{new_my_str}")
+
+#  统计字符串中某个字符的出现次数，count
+my_str="sjdjkednfkedj"
+count=my_str.count("j")
+print(count)
+# 统计字符串的长度，len()
+num=len(my_str)
+print(num)
