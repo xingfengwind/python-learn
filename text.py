@@ -1,44 +1,14 @@
- # 定义一个字典
-my_dict1={"王力宏":99,"周杰伦":88,"李俊杰":77}
-# 定义空字典
-my_dict2={}
-my_dict3=dict()
-print(f"字典1的内容是:{my_dict1},类型：{type(my_dict1)}")
-print(f"字典1的内容是:{my_dict2},类型：{type(my_dict2)}")
-print(f"字典1的内容是:{my_dict3},类型：{type(my_dict3)}")
-
-# 定义重复Key的字典
-my_dict1={"王力宏":99,"王力宏":88,"李俊杰":77}
-print(f"重复key的字典的内容是:{my_dict1}")
-
-# 从字典中基于Key获取Value
-my_dict1={"王力宏":99,"周杰伦":88,"李俊杰":77}
-score=my_dict1["王力宏"]
-print(f"王力宏的考试分数是:{score}")
-score=my_dict1["周杰伦"]
-print(f"周杰伦的考试分数是:{score}")
-# 定义嵌套字典
-stu_score_dict={
-    "王力宏":{
-        "语文":77,
-        "数学":86,
-        "英语":33
-    },
-    "周杰伦":{
-        "语文":88,
-        "数学":86,
-        "英语":55
-    },
-    "李俊杰":{
-        "语文":99,
-        "数学":96,
-        "英语":66
-    }
-}
-print(f"学生的考试信息:{stu_score_dict}")
-# 从嵌套字典中获取数据
-# 看一下周杰伦的语文信息
-score=stu_score_dict["周杰伦"]["语文"]
-print(f"周杰伦的语文成绩:{score}")
-score=stu_score_dict["李俊杰"]["英语"]
-print(f"李俊杰的英语成绩:{score}")
+#strip方法
+my_str = " ddd "
+new_my_str = my_str.strip()  # 不传入参数，去除首尾空格
+print(f"字符串{my_str}被strip后，结果：:{new_my_str}")
+my_str = "12ddd21"
+new_my_st = my_str.strip("12")
+print(f"字符串{my_str}被strip('12')后，结果：:{new_my_str}")
+#  统计字符串中某个字符的出现次数，count
+my_str = "sjdjkednfkedj"
+count = my_str.count("j")
+print(count)
+# 统计字符串的长度，len()
+num = len(my_str)
+print(num)
