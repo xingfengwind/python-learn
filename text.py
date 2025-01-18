@@ -1,14 +1,76 @@
-#strip方法
-my_str = " ddd "
-new_my_str = my_str.strip()  # 不传入参数，去除首尾空格
-print(f"字符串{my_str}被strip后，结果：:{new_my_str}")
-my_str = "12ddd21"
-new_my_st = my_str.strip("12")
-print(f"字符串{my_str}被strip('12')后，结果：:{new_my_str}")
-#  统计字符串中某个字符的出现次数，count
-my_str = "sjdjkednfkedj"
-count = my_str.count("j")
-print(count)
-# 统计字符串的长度，len()
-num = len(my_str)
-print(num)
+# 演示数据容器的通用功能
+
+my_list ={1,2,3,4,5}
+my_tuple=(1,2,3,4,5)
+my_str="abcdefg"
+my_set={1,2,3,4,5}
+my_dict={"key1":1,"key2":2,"key3":3,"key4":4,"key5":5}
+
+# len元素个数
+print(f"列表 元素个数有：{len(my_list)}")
+print(f"元组 元素个数有：{len(my_tuple)}")
+print(f"字符串元素个数有：{len(my_str)}")
+print(f"集合 元素个数有：{len(my_set)}")
+print(f"字典 元素个数有：{len(my_dict)}")
+
+# max最大元素
+print(f"列表 最大元素是：{len(my_list)}")
+print(f"元组 最大元素是：{len(my_tuple)}")
+print(f"字符串最大元素是：{len(my_str)}")
+print(f"集合 最大元素是：{len(my_set)}")
+print(f"字典 最大元素是：{len(my_dict)}")
+
+# min最小元素
+print(f"列表 最小元素是：{len(my_list)}")
+print(f"元组 最小元素是：{len(my_tuple)}")
+print(f"字符串最小元素是：{len(my_str)}")
+print(f"集合 最小元素是：{len(my_set)}")
+print(f"字典 最小元素是：{len(my_dict)}")
+
+# 类型转换：容器转列表
+print(f"列表转列表的结果是：{list(my_list)}")
+print(f"元组转列表的结果是：{list(my_tuple)}")
+print(f"字符串转列表的结果是：{list(my_str)}")
+print(f"集合转列表的结果是：{list(my_set)}")
+print(f"字典转列表的结果是：{list(my_dict)}")
+
+# 类型转换：容器转元组
+print(f"列表转元组的结果是：{tuple(my_list)}")
+print(f"元组转元组的结果是：{tuple(my_tuple)}")
+print(f"字符串转元组的结果是：{tuple(my_str)}")
+print(f"集合转列元组的结果是：{tuple(my_set)}")
+print(f"字典转元组的结果是：{tuple(my_dict)}")
+
+# 类型转换：容器转字符串
+print(f"列表转字符串的结果是：{str(my_list)}")
+print(f"元组转字符串的结果是：{str(my_tuple)}")
+print(f"字符串转字符串的结果是：{str(my_str)}")
+print(f"集合转列字符串的结果是：{str(my_set)}")
+print(f"字典转字符串结果是：{str(my_dict)}")
+
+# 类型转换：容器转集合
+print(f"列表转集合 的结果是：{set(my_list)}")
+print(f"元组转集合的结果是：{set(my_tuple)}")
+print(f"字符串转集合的结果是：{set(my_str)}")
+print(f"集合转集合的结果是：{set(my_set)}")
+print(f"字典转集合结果是：{set(my_dict)}")
+
+# 进行容器的排序
+my_list ={1,2,3,4,5}
+my_tuple=(1,2,3,4,5)
+my_str="abcdefg"
+my_set={1,2,3,4,5}
+my_dict={"key1":1,"key2":2,"key3":3,"key4":4,"key5":5}
+
+print(f"列表对像的排序结果是：{sorted(my_list)}")
+print(f"元组对像的排序结果是：{sorted(my_tuple)}")
+print(f"字符串对像的排序结果是：{sorted(my_str)}")
+print(f"集合对像的排序结果是：{sorted(my_set)}")
+print(f"字典对像的排序结果是：{sorted(my_dict)}")
+
+#反向排序
+print(f"列表对像的排序结果是：{sorted(my_list,reverse=True)}")
+print(f"元组对像的排序结果是：{sorted(my_tuple,reverse=True)}")
+print(f"字符串对像的排序结果是：{sorted(my_str,reverse=True)}")
+print(f"集合对像的排序结果是：{sorted(my_set,reverse=True)}")
+print(f"字典对像的排序结果是：{sorted(my_dict,reverse=True)}")
