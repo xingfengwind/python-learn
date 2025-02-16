@@ -1,46 +1,26 @@
-"""
-演示面向对象：继承的基础语法
-"""
-# 演示单继承
 class Phone:
     IMEI=None
-    pooducer="dkfal"
-    def call_by_4g(self):
-       print("4g通话")
-
-class Phone2022(Phone):
-    face_id="10293"
+    producer="ldfjal"
 
     def call_by_5g(self):
-        print("2022新功能：5g通话")
+        print("使用5g网络进行通话")
 
-phone=Phone2022()
-print(phone.pooducer)
-phone.call_by_4g()
-phone.call_by_5g()
+# 定义子类：复写父类成员
+class MyPhone(Phone):
+    product="ldf"
+    def call_by_5g(self):
+        print("开启CPU单核模式，确保通话的时候省电")
+        # 方式1
+        # print(f"父类的厂商是：{Phone.producer}")
+        # Phone.call_by_5g(self)
 
-# 演示多继承
-class NFCReader:
-    nfc_type="第五代"
-    producer="dkf"
-
-    def read_card(self):
-        print("NFC读卡")
-
-    def write_card(self):
-        print("NFC写卡")
-class RemoteControl:
-    rc_type="红外遥控"
-
-    def control(self):
-        print("红外遥控开启了")
-class MyPhone(Phone, NFCReader, RemoteControl):
-    pass
+        #方式2
+        print(f"父类的厂商是：{super().producer}")
+        super().call_by_5g()
+        print("关闭CPU单核模式，确保性能")
 
 phone=MyPhone()
-phone.call_by_4g()
-phone.read_card()
-phone.write_card()
-phone.control()
-# 演示多继承下，父类成员名一致情况
-print(phone.pooducer)# 显示优先继承的
+phone.call_by_5g()
+print(phone.product)
+
+# 在子类中，调用父类成员
