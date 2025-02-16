@@ -1,28 +1,24 @@
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    # __str__魔术方法
-    def __str__(self):
-        return f'Student类对象： {self.name}, age {self.age}'
-    # __lt__魔术方法
-    def __lt__(self,other):
-        return self.age<other.age
-    # __le__魔术方法
-    def __le__(self,other):
-        return self.age<=other.age
-    # __eq__魔术方法
-    def __eq__(self,other):
-        return self.age==other.age
+"""
+演示面向对象封装思想中私有成员的使用
+"""
+
+# 定义一个类：内涵私有成员变量和私有成员方法
+class Phone:
+    __current_voltage=0.5 #当前手机运行电压
+
+    def __keep_single_core(self):
+        print("让CPu以单核模式运行")
+
+    def call_by_5g(self):
+       if self.__current_voltage>=1:
+           print("5g电话已开启")
+       else:
+           self.__keep_single_core()
+           print("电量不足，无法使用5g通话，并以设置为单核运行进行省电。")
+
+phone=Phone()
+phone.call_by_5g()
 
 
-stu1=Student("John", 22)
-stu2=Student("Johu", 25)
-stu3=Student("Johy", 22)
-print(stu1)
-print(str(stu1))
-print(stu1<stu2)
-print(stu1>stu2)
-print(stu3>=stu2)
-print(stu3<=stu1)
-print(stu3==stu1)
+
+
