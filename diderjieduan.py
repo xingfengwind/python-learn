@@ -1,26 +1,34 @@
-class Phone:
-    IMEI=None
-    producer="ldfjal"
+"""
+演示变量的类型注释
+"""
+from random import random
 
-    def call_by_5g(self):
-        print("使用5g网络进行通话")
+# 基础数据类型注释
+var_1:int=18
+var_2:str="dfjalkd"
+var_3:bool=True
 
-# 定义子类：复写父类成员
-class MyPhone(Phone):
-    product="ldf"
-    def call_by_5g(self):
-        print("开启CPU单核模式，确保通话的时候省电")
-        # 方式1
-        # print(f"父类的厂商是：{Phone.producer}")
-        # Phone.call_by_5g(self)
+# 类对象类型的注释
+class Student:
+    pass
+stu:Student=Student()
 
-        #方式2
-        print(f"父类的厂商是：{super().producer}")
-        super().call_by_5g()
-        print("关闭CPU单核模式，确保性能")
+#基础容器类型注释
+my_list:list=[1,2,3]
+my_tuple:tuple=(1,2,3)
+my_dict:dict={1:"a",2:"b"}
+#容器类型详细注解
+my_list:list[int]=[1,2,3]
+my_touple:tuple[int,str,bool]=(1,"sdkjf",True)
+my_dict:dict[str,int]={1:"a",2:"b"}
+#在注释中进行类型注释
+var_1=random.randint(1,10) # type:int
+#var_2=json.loads('{"name":"djf"}') # type: dict[str,str]
+def func():
+    return 10
+var_3=func() # type:int
+# 类型注解只是个备注不会影响代码运行
 
-phone=MyPhone()
-phone.call_by_5g()
-print(phone.product)
 
-# 在子类中，调用父类成员
+
+
