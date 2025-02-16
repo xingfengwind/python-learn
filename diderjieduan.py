@@ -1,20 +1,28 @@
-"""
-演示类的构造方法
-"""
-# 演示使用构造方法对成员变量进行赋值
-# 构造方法的名称：__init__
 class Student:
-    name=None
-    age=None
-    tel=None
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    # __str__魔术方法
+    def __str__(self):
+        return f'Student类对象： {self.name}, age {self.age}'
+    # __lt__魔术方法
+    def __lt__(self,other):
+        return self.age<other.age
+    # __le__魔术方法
+    def __le__(self,other):
+        return self.age<=other.age
+    # __eq__魔术方法
+    def __eq__(self,other):
+        return self.age==other.age
 
-    def __init__(self,name,age,tel):
-        self.name=name
-        self.age=age
-        self.tel=tel
-        print("Student类创建了一个类对象")
 
-stu=Student("djas",31,"1992839")
-print(stu.name)
-print(stu.age)
-print(stu.tel)
+stu1=Student("John", 22)
+stu2=Student("Johu", 25)
+stu3=Student("Johy", 22)
+print(stu1)
+print(str(stu1))
+print(stu1<stu2)
+print(stu1>stu2)
+print(stu3>=stu2)
+print(stu3<=stu1)
+print(stu3==stu1)
