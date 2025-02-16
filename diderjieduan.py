@@ -1,22 +1,46 @@
 """
-题练习
+演示面向对象：继承的基础语法
 """
-# 设计一个类：用来描述手机
+# 演示单继承
 class Phone:
-    # 提供私有成员变量：__is__5g__enable
-    __is_5g_enable=False
-   # 提供私有成员方法：__check__5g()
-    def __check_5g(self):
-        if self.__is_5g_enable:
-            print("5g开启")
-        else:
-            print("5g关闭，使用4g网络")
+    IMEI=None
+    pooducer="dkfal"
+    def call_by_4g(self):
+       print("4g通话")
 
-    # 提供公开成员方法：call_by_5g()
+class Phone2022(Phone):
+    face_id="10293"
+
     def call_by_5g(self):
-        self.__check_5g()
-        print("正在通话中")
+        print("2022新功能：5g通话")
 
-phone=Phone()
+phone=Phone2022()
+print(phone.pooducer)
+phone.call_by_4g()
 phone.call_by_5g()
 
+# 演示多继承
+class NFCReader:
+    nfc_type="第五代"
+    producer="dkf"
+
+    def read_card(self):
+        print("NFC读卡")
+
+    def write_card(self):
+        print("NFC写卡")
+class RemoteControl:
+    rc_type="红外遥控"
+
+    def control(self):
+        print("红外遥控开启了")
+class MyPhone(Phone, NFCReader, RemoteControl):
+    pass
+
+phone=MyPhone()
+phone.call_by_4g()
+phone.read_card()
+phone.write_card()
+phone.control()
+# 演示多继承下，父类成员名一致情况
+print(phone.pooducer)# 显示优先继承的
