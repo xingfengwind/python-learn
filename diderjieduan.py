@@ -1,26 +1,20 @@
 """
-演示类与对象的关系:及面向对象的编程套路
+演示类的构造方法
 """
+# 演示使用构造方法对成员变量进行赋值
+# 构造方法的名称：__init__
+class Student:
+    name=None
+    age=None
+    tel=None
 
-# 设计一个闹钟类
-class Clock:
-    id=None
-    price=None
+    def __init__(self,name,age,tel):
+        self.name=name
+        self.age=age
+        self.tel=tel
+        print("Student类创建了一个类对象")
 
-    def ring(self):
-        import winsound
-        winsound.Beep(2000,3000)
-
-# 构造2个闹钟对象并让其工作
-clock1=Clock()
-
-clock1.id="003032"
-clock1.price=19.99
-print(f"闹钟id:{clock1.id},价格price:{clock1.price}")
-clock1.ring()
-
-clock2=Clock()
-clock2.id="003034"
-clock2.price=20.00
-print(f"闹钟id:{clock2.id},价格price:{clock2.price}")
-clock2.ring()
+stu=Student("djas",31,"1992839")
+print(stu.name)
+print(stu.age)
+print(stu.tel)
