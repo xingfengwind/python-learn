@@ -1,11 +1,10 @@
 """
-演示对函数（方法）进行注解
+演示Union联合类型注解
 """
-# 对形参进行类型注解
-def add(x:int,y:int):
-    return x+y
-add(1,2)
-# 对返回值进行类型注释
-def func(data:list)->list:
-    return data
-print(func(add(1,2)))
+# 使用Union类型，必须先导包
+from typing import Union
+my_list:list[Union[int,str]] = [1,2,"jdsaf","fjdsa"]
+
+def func(data:Union[int,str]) -> Union[int,str]:
+    pass
+func()
