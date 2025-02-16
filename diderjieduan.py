@@ -1,24 +1,22 @@
 """
-演示面向对象封装思想中私有成员的使用
+题练习
 """
-
-# 定义一个类：内涵私有成员变量和私有成员方法
+# 设计一个类：用来描述手机
 class Phone:
-    __current_voltage=0.5 #当前手机运行电压
+    # 提供私有成员变量：__is__5g__enable
+    __is_5g_enable=False
+   # 提供私有成员方法：__check__5g()
+    def __check_5g(self):
+        if self.__is_5g_enable:
+            print("5g开启")
+        else:
+            print("5g关闭，使用4g网络")
 
-    def __keep_single_core(self):
-        print("让CPu以单核模式运行")
-
+    # 提供公开成员方法：call_by_5g()
     def call_by_5g(self):
-       if self.__current_voltage>=1:
-           print("5g电话已开启")
-       else:
-           self.__keep_single_core()
-           print("电量不足，无法使用5g通话，并以设置为单核运行进行省电。")
+        self.__check_5g()
+        print("正在通话中")
 
 phone=Phone()
 phone.call_by_5g()
-
-
-
 
