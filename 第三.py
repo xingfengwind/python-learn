@@ -1,28 +1,29 @@
 """
-演示装饰器的写法
+演示设计模式之工厂模式
 """
-# 装饰器的一般写法
-def outer(func):
-    def inner():
-        print("睡")
-        func()
-        print("起")
-    return inner
-def sleep():
-    import random
-    import time
-    print("睡眠中·····")
-    time.sleep(random.randint(1, 5))
+class Person:
+    pass
+class Worker(Person):
+    pass
+
+class Student(Person):
+    pass
+
+class Teacher(Person):
+    pass
+
+class PersonFactory:
+    def create(self,p_type):
+        if p_type == 'w':
+            return Worker()
+        elif p_type == 's':
+            return Student()
+        else:
+            return Teacher()
+
+pf=PersonFactory()
+work=pf.get_person('w')
+stu=pf.get_person('s')
+techer=pf.get_person('t')
 
 
-fn=outer(sleep)
-fn()
-# 装饰器的快捷写法
-@outer
-def sleep2():
-    import random
-    import time
-    print("睡眠中····")
-    time.sleep(random.randint(1, 5))
-
-sleep()
