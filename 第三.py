@@ -1,29 +1,25 @@
 """
-演示设计模式之工厂模式
+演示多线程编程
 """
-class Person:
-    pass
-class Worker(Person):
-    pass
+import time
+import threading
 
-class Student(Person):
-    pass
+def sing(msg):
+    while True:
+        print(msg)
+        time.sleep(1)
 
-class Teacher(Person):
-    pass
+def dance(msg):
+    while True:
+        print(msg)
+        time.sleep(1)
 
-class PersonFactory:
-    def create(self,p_type):
-        if p_type == 'w':
-            return Worker()
-        elif p_type == 's':
-            return Student()
-        else:
-            return Teacher()
+if __name__ == '__main__':
+    # 创建一个唱歌的线程
+    sing_thread = threading.Thread(target=sing,args=("我要唱歌", ))
+    # 创建一个跳舞的线程
+    dance_thread = threading.Thread(target=dance,kwargs={"msg":"我在跳舞"})
 
-pf=PersonFactory()
-work=pf.get_person('w')
-stu=pf.get_person('s')
-techer=pf.get_person('t')
-
-
+    #让线程工作
+    sing_thread.start()
+    dance_thread.start()
